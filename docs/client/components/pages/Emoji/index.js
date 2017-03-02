@@ -104,11 +104,6 @@ export default class App extends Component {
                 CSS class for the emoji wrapper.
               </div>
               <div className={styles.subParam}>
-                <span className={styles.subParamName}>emojiCharacter:</span>
-                CSS class for the emoji wrapper. This should have opacity 0 to
-                hide the Emoji rendering of the native platform.
-              </div>
-              <div className={styles.subParam}>
                 <span className={styles.subParamName}>emojiSuggestions:</span>
                 CSS class for suggestions component.
               </div>
@@ -125,7 +120,7 @@ export default class App extends Component {
                 CSS class for an entry’s text in the suggestions component.
               </div>
               <div className={styles.subParam}>
-                <span className={styles.subParamName}>emojiSuggestionsEntryAvatar:</span>
+                <span className={styles.subParamName}>emojiSuggestionsEntryIcon:</span>
                 CSS class for an entry’s avatar image in the suggestions component.
               </div>
             </div>

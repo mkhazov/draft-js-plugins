@@ -41,6 +41,9 @@ export default class MentionSuggestions extends Component {
     if (nextProps.suggestions.size === 0 && this.state.isActive) {
       this.closeDropdown();
     }
+    if (nextProps.suggestions.size >= 1 && !this.state.isActive) {
+      this.openDropdown();
+    }
   }
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -124,10 +127,11 @@ export default class MentionSuggestions extends Component {
     // Checks that the cursor is after the @ character but still somewhere in
     // the word (search term). Setting it to allow the cursor to be left of
     // the @ causes troubles due selection confusion.
+    const plainText = editorState.getCurrentContent().getPlainText();
     const selectionIsInsideWord = leaves
       .filter((leave) => leave !== undefined)
       .map(({ start, end }) => (
-        (start === 0 && anchorOffset === 1 && anchorOffset <= end) || // @ is the first character
+        (start === 0 && anchorOffset === 1 && plainText.charAt(anchorOffset) !== this.props.mentionTrigger && new RegExp(this.props.mentionTrigger, 'g').test(plainText) && anchorOffset <= end) || // @ is the first character
         (anchorOffset > start + 1 && anchorOffset <= end) // @ is in the text or at the end
       ));
 
