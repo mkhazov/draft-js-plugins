@@ -1,5 +1,6 @@
 import createBlockStyleButton from './utils/createBlockStyleButton';
 import createInlineStyleButton from './utils/createInlineStyleButton';
+import createLinkButton from './utils/createLinkButton';
 import ItalicButton from './components/ItalicButton';
 import BoldButton from './components/BoldButton';
 import CodeButton from './components/CodeButton';
@@ -20,6 +21,7 @@ import AddLinkButton from './components/AddLinkButton';
 export {
   createBlockStyleButton,
   createInlineStyleButton,
+  createLinkButton,
   ItalicButton,
   BoldButton,
   CodeButton,
