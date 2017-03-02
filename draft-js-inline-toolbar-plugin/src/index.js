@@ -11,14 +11,13 @@ import Separator from './components/Separator';
 import buttonStyles from './buttonStyles.css';
 import toolbarStyles from './toolbarStyles.css';
 
-const createInlineToolbarPlugin = (config = {}) => {
+export default (config = {}) => {
   const defaultTheme = { buttonStyles, toolbarStyles };
-
-  const defaultaddLink = undefined;
+  const defaultAddLink = undefined;
 
   const {
     theme = defaultTheme,
-    addLink = defaultaddLink,
+    addLink = defaultAddLink,
     structure = [
       BoldButton,
       ItalicButton,
@@ -29,7 +28,7 @@ const createInlineToolbarPlugin = (config = {}) => {
 
   const store = createStore({
     isVisible: false,
-    addLink
+    addLink,
   });
 
   const toolbarProps = {
@@ -56,8 +55,6 @@ const createInlineToolbarPlugin = (config = {}) => {
     InlineToolbar: decorateComponentWithProps(Toolbar, toolbarProps),
   };
 };
-
-export default createInlineToolbarPlugin;
 
 export {
   Separator,
