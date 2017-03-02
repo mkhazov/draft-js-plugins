@@ -3,14 +3,11 @@ import {
   EditorState,
 } from 'draft-js';
 
-export default (editorState, url) => {
-  const contentStateWithEntity = editorState.getCurrentContent().createEntity('LINK', 'MUTABLE', { url });
-  const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
-
+export default (editorState) => {
   const newEditorState = RichUtils.toggleLink(
     editorState,
     editorState.getSelection(),
-    entityKey,
+    null,
   );
   return EditorState.forceSelection(
     newEditorState,
