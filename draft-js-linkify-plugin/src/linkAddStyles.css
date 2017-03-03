@@ -48,7 +48,6 @@
 }
 
 .addLinkPressedButton {
-  composes: addLinkButton;
   background: #ededed;
 }
 
